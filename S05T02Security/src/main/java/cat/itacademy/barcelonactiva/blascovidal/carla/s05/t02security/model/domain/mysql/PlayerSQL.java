@@ -25,7 +25,7 @@ import java.util.List;
 public class PlayerSQL implements UserDetails {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int playerID;
 
     @Column(name = "nickname")

@@ -59,7 +59,7 @@ public class SQLServiceImpl implements ISQLService {
     }
 
     @Override
-    public PlayerSQLDTO findPlayerByUsername(String nickname) {
+    public PlayerSQLDTO findPlayerByNickname(String nickname) {
         PlayerSQL player = playerRepository.findByNicknameContaining(nickname);
         return convertPlayerSQLToDTO(player);
     }
@@ -91,7 +91,7 @@ public class SQLServiceImpl implements ISQLService {
         //We sort the players by its success rate order, but in reverse, since it goes from smaller to bigger originally
         players.sort(Collections.reverseOrder(Comparator.comparing(PlayerSQL::getSuccessRate)));
         List<String> ranking = players.stream()
-                .map(player -> " "+player.getSuccessRate()+ "% - "+ player.getUsername())
+                .map(player -> " "+player.getSuccessRate()+ "% - "+ player.getNickname())
                 .collect(Collectors.toList());
         int rankingPositions = 1;
         List<String> finalRanking = new ArrayList<>();

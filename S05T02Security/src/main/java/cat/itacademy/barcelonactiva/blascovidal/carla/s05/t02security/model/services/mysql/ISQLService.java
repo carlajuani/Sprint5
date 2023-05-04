@@ -11,7 +11,7 @@ public interface ISQLService {
     GameSQLDTO addGame(int playerID);
     PlayerSQLDTO updatePlayer(int id, PlayerSQLDTO playerData);
     PlayerSQLDTO findPlayerById(int iD);
-    PlayerSQLDTO findPlayerByUsername(String username);
+    PlayerSQLDTO findPlayerByNickname(String username);
     List<GameSQLDTO> findGamesByPlayerID(int iD);
     List<PlayerSQLDTO> findAllPlayers();
     List<String> calculatePlayersRanking();

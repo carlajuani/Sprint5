@@ -198,9 +198,9 @@ public class SQLGameController {
             summary = "get player by nickname",
             description = "It requires a player's username as path variable"
     )
-    public ResponseEntity<PlayerSQLDTO> getPlayerByUsername(@PathVariable("nickname") String nickname) {
+    public ResponseEntity<PlayerSQLDTO> getPlayerByNickname(@PathVariable("nickname") String nickname) {
         try {
-            PlayerSQLDTO player = service.findPlayerByUsername(nickname);
+            PlayerSQLDTO player = service.findPlayerByNickname(nickname);
             if (player == null) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
